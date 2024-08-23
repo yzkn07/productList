@@ -36,14 +36,5 @@ export default async function SaveApplication(prevState,formData) {
 
     console.log("geçti");
     
-    const request = await fetch(
-        `https://api.mailgun.net/v3/sandbox8316fc80901543da959eaadb22b69393.mailgun.org/messages`,
-        {
-          method: 'POST',
-          headers: {
-            Authorization: 'Basic ' + Buffer.from('<username>:<password>').toString('base64')
-          },
-          body: form
-        }
-      );
+
 }
