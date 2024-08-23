@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Sıfırdan Frontend Bootcamp",
+        "categoryId": 1
+    },
+    {
+        "id": 2,
+        "name": "Sıfırdan Backend Bootcamp",
+        "categoryId": 1
+    },
+    {
+        "id": 3,
+        "name": "Dijital İçerik Yayıncılık",
+        "categoryId": 2
+    },
+    {
+        "id": 4,
+        "name": "Dijital Pazarlama Yöneticiliği",
+        "categoryId": 2
+    },
+    {
+        "id": 5,
+        "name": "Chef Eğitimi",
+        "categoryId": 3
+    },
+    {
+        "id": 6,
+        "name": "İleri Televizyonculuk Eğitimi",
+        "categoryId": 4
+    }
+]

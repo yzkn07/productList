@@ -1,5 +1,5 @@
 {
-  "name": "next28.07",
+  "name": "furkan-hoca",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,5 +12,9 @@
     "react": "^18",
     "react-dom": "^18",
     "next": "14.2.5"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5"
   }
 }

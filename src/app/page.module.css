@@ -1,0 +1,196 @@
+.link {
+  display: flex;
+  gap: 20px;
+  justify-content: center; /* Linkleri ortalar */
+  padding: 10px;
+  background: #f9f9f9; /* Hafif arka plan rengi */
+  border-radius: 8px; /* Yuvarlatılmış köşeler */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+  transition: background 0.3s; /* Arka plan geçiş efekti */
+}
+
+.link:hover {
+  background: #ececec; /* Hover olduğunda arka plan değişimi */
+}
+
+.link a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  position: relative; /* Pseudo element için gerekli */
+  padding: 5px 10px;
+  transition: color 0.2s, transform 0.2s; /* Daha hızlı hover geçiş efekti */
+  overflow: hidden; /* Pseudo elementin dışarı taşmasını önler */
+}
+
+.link a::before, .link a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: coral;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.link a::after {
+  top: 0;
+  bottom: auto;
+}
+
+.link a:hover::before, .link a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.link a:hover {
+  color: coral; /* Hover olduğunda coral rengi */
+  animation: smoothBounce 0.5s; /* Hover olduğunda zıplama animasyonu */
+}
+.link .active {
+  color: coral; /* Aktif linkin rengi */
+  background-color: #ffe5e0; /* Aktif linkin arka plan rengi */
+  border-radius: 5px; /* Aktif linkin köşe yuvarlama */
+  box-shadow: rgba(255, 127, 80, 0.4) 0px 4px 8px; /* Coral tonlarında gölge efekti */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Geçiş efekti */
+}
+
+.link .active::before, .link .active::after {
+  width: 100%;
+  left: 0;
+}
+
+@keyframes smoothBounce {
+  0%,  100% {
+      transform: translateY(0);
+  }
+  60% {
+      transform: translateY(8px);
+  }
+}
+
+
+.opss {
+  font-size: 1.5rem; /* Büyük ve okunabilir bir yazı boyutu */
+  color: white; /* Beyaz yazı rengi */
+  background: linear-gradient(to bottom, rgb(255, 127, 80) 0%, rgba(0, 0, 0, 0.2) 100%), coral; /* Daha karanlık siyah gradient ve arka plan rengi */
+  padding: 20px 40px; /* İçerik ile kenarlar arasında daha fazla boşluk */
+  border-radius: 8px; /* Köşeleri yuvarlatma */
+  text-align: center; /* Yazıyı ortalama */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; /* Daha derin bir gölge efekti */
+  position: absolute; /* Merkezde konumlandırmak için */
+  top: 30%; /* Sayfanın ortasına */
+  left: 50%; /* Sayfanın ortasına */
+  transform: translate(-50%, -50%); /* Gerçek merkezleme */
+}
+
+.tekurun {
+  font-size: 22px;
+  font-weight: 400;
+  color: black;
+  text-shadow: rgb(163, 163, 163) 1px 2px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 20px auto;
+  min-height: 200px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -10px 0px inset;
+  position: relative;
+  background-image: linear-gradient(to right top, #ffffff, #faf5e0, #ffe1ba, #ffbe96, #ff7f50);
+  background-size: 100% 100%; /* Arka planı sabitle */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Daha yumuşak bir geçiş */
+}
+
+.tekurun:hover {
+  transform: translateY(-1px); /* Hover sırasında kutuyu biraz yukarı kaldır */
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 8px, rgba(0, 0, 0, 0.4) 0px 10px 20px -3px, rgba(0, 0, 0, 0.3) 0px -10px 0px inset;
+}
+
+.tekurun:active {
+  text-shadow: transparent 0 0 0;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  transform: translateY(5px); /* Buton basma hissiyatı için */
+  background-position: center; /* Arka planı sabitle */
+}
+
+/* form */
+/* Form Container */
+.formContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Inputlar ve select arasında boşluk bırakır */
+  background-color: #f7f7f7; /* Hafif gri arka plan rengi */
+  padding: 20px;
+  border-radius: 10px; /* Yuvarlatılmış köşeler */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+  max-width: 400px; /* Formun genişliğini sınırlar */
+  margin: 10px auto 0 auto; /* Formu ortalar */
+  transition: background-color 1s;
+  &:hover{
+    background-color: #ececec; /* Hover olduğunda arka plan değişimi */
+  }
+}
+
+/* Input Fields */
+.inputField {
+  padding: 12px;
+  border: 2px solid #ccc; /* İnce, gri bir çerçeve */
+  border-radius: 8px; /* Yuvarlatılmış köşeler */
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s; /* Yumuşak geçiş efekti */
+  outline: none; /* Default outline'ı kaldırır */
+}
+
+/* Input Focus State */
+.inputField:focus {
+  border-color: coral; /* Odaklandığında coral rengi */
+  box-shadow: 0 0 8px rgba(255, 127, 80, 0.5); /* Coral tonlarında gölge efekti */
+}
+
+/* Placeholder Styling */
+.inputField::placeholder {
+  color: #999; /* Placeholder rengini hafif gri yapar */
+  font-style: italic; /* Placeholder yazısını italik yapar */
+}
+
+/* Select Field */
+.selectField {
+  padding: 12px;
+  border: 2px solid #ccc; /* İnce, gri bir çerçeve */
+  border-radius: 8px; /* Yuvarlatılmış köşeler */
+  font-size: 16px;
+  background-color: white; /* Arka plan beyaz */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Yumuşak geçiş efekti */
+  outline: none; /* Default outline'ı kaldırır */
+  appearance: none; /* Tarayıcıya özgü stilin kaldırılması */
+  cursor: pointer; /* Pointer olarak fare işareti */
+}
+
+/* Select Focus State */
+.selectField:focus {
+  border-color: coral; /* Odaklandığında coral rengi */
+  box-shadow: 0 0 8px rgba(255, 127, 80, 0.5); /* Coral tonlarında gölge efekti */
+}
+
+.formError{
+  text-align: center;
+  background-color: #ff7f50;
+  color: #333;
+  margin: 10px auto 0 auto;
+  padding: 10px;
+  max-width: 400px; /* Formun genişliğini sınırlar */
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 20px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  z-index: 20000;
+}
+
+
+
