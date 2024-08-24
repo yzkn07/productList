@@ -6,8 +6,8 @@
 // import { notFound } from "next/navigation";
 
 
-// export default function Urun({ params }) {
-//     const { id } = params;
+// export default function Urun({ params = {} }) {
+//     const { id } = params
 //     const [product, setProduct] = useState({});
 //     const [isLoading, setIsLoading] = useState(true);
  
@@ -67,44 +67,3 @@
 //         </div>
 //     );
 // }
-
-// "use client"
-// import styles from "@/app/page.module.css"
-
-// export default function ProductDetailOne({ product }) {
-
-//     return(
-//         <>
-//         <div className={styles.tekurun}>
-//             {product.title}
-//         </div>
-//         </>
-//     )
-// }
-
-"use client"
-import styles from "@/app/urunler/urunler.module.css"
-import Image from "next/image"
-export default function ProductDetailOne({ product }) {
-
-    return(
-        <>
-            <div className={styles['product-card']}>
-                 <Image
-                     className={styles['product-image']}
-                     src={product.thumbnail}
-                     width={300}
-                     height={300}
-                     alt={product.title}
-                     priority
-                 />
-                 <div className={styles['product-title']}>{product.title}</div>
-                 <div className={styles['product-price']}>{product.price}$</div>
-                 <div className={styles['product-description']}>{product.description}</div>
-                 <div className={styles['button-container']}>
-                     <button className={styles['add-to-cart-button']}>Add to Cart</button>
-                 </div>
-            </div>
-        </>
-    )
-}

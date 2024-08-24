@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from './urunler.module.css';
 
-export default function Urunler() {
+export default function Urunler( ) {
 
     const [products, setProducts] = useState([]);
     const [newProduct, setNewProduct] = useState("");
